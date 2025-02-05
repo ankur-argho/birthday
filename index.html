@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Surprise</title>
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        section {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        h1, h2, p {
+            color: white;
+        }
+
+        a {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px 20px;
+            font-size: 1rem;
+            background: #ff007f;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        a:hover {
+            background: #ff0050;
+        }
+
+        /* Page 1: Introduction Page */
+        #page1 {
+            background: linear-gradient(120deg, #ff9a9e, #fad0c4);
+            background: url('1.jpg') no-repeat center center/cover;
+        }
+
+        #page1 h1 {
+            font-size: 3rem;
+            color: white;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        
+
+        /* Page 2: Full Page Image */
+        #page2 {
+            background: url('4.jpg') no-repeat center center/cover;
+        }
+
+        #page2 h1 {
+            font-size: 4rem;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            bottom: 40%;
+        }
+
+        /* Page 3: Balloons and Cake */
+        #page3 {
+            background: chocolate;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .balloon {
+            width: 50px;
+            height: 70px;
+            background-color: red;
+            border-radius: 50%;
+            position: absolute;
+            animation: float 5s infinite ease-in-out;
+        }
+
+        .balloon::after {
+            content: '';
+            width: 2px;
+            height: 20px;
+            background: white;
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .balloon.red { background-color: red; }
+        .balloon.blue { background-color: blue; }
+        .balloon.green { background-color: green; }
+        .balloon.yellow { background-color: yellow; }
+
+        .balloon:nth-child(1) {
+            left: 20%;
+            animation-duration: 4s;
+        }
+        .balloon:nth-child(2) {
+            left: 40%;
+            animation-duration: 5s;
+            animation-delay: 1s;
+        }
+        .balloon:nth-child(3) {
+            left: 60%;
+            animation-duration: 6s;
+            animation-delay: 2s;
+        }
+        .balloon:nth-child(4) {
+            left: 80%;
+            animation-duration: 7s;
+            animation-delay: 3s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-10%);
+                opacity: 0;
+            }
+        }
+
+        .cake {
+            position: absolute;
+            bottom: 400px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+        }
+
+        /* Updated size for the cake image */
+        .cake img {
+            width: 300px; /* Increased size */
+            height: auto; /* Maintain aspect ratio */
+        }
+
+        .cake p {
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        /* Page 4: Four Pictures and Message */
+        #page4 {
+            background: #333;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #page4 .pictures {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        #page4 .pictures img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        #page4 p {
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Page 1: Introduction Page -->
+    <section id="page1">
+        <h1>Hey my love, wanna see a surprise?</h1>
+        <a href="#page2">Yes</a>
+    </section>
+
+    <!-- Page 2: Full Page Image -->
+    <section id="page2">
+        <h1>My Love,I Love you,Its's a little surprise for  u from me</h1>
+        <a href="#page3">Next</a>
+    </section>
+
+    <!-- Page 3: Balloons and Cake -->
+    <section id="page3">
+        <div class="balloon red"></div>
+        <div class="balloon blue"></div>
+        <div class="balloon green"></div>
+        <div class="balloon yellow"></div>
+        <div class="cake">
+            <img src="7.jpg" alt="Chocolate Cake">
+            <p>Make a Wish!Happy Birthday Jaan</p>
+        </div>
+        <a href="#page2" style="left: 30%; transform: translateX(-30%);">Previous</a>
+        <a href="#page4" style="right: 30%; left: auto; transform: translateX(0);">Next</a>
+    </section>
+
+    <!-- Page 4: Pictures and Message -->
+    <section id="page4">
+        <div class="pictures">
+            <img src="2.jpg" alt="Picture 1">
+            <img src="3.jpg" alt="Picture 2">
+            <img src="Messenger_creation_1615943708813806.jpeg" alt="Picture 3">
+            <img src="5.jpg" alt="Picture 4">
+        </div>
+        <p>You make every moment special. I’m so lucky to have you in my life.
+          I am not giving u thanks because I know u r mine❤️I love you million billion times and be with me always</p>
+        <a href="#page3">Previous</a>
+    </section>
+</body>
+</html>
